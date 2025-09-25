@@ -72,9 +72,8 @@ nav h1 {
 }
 
 .hero p {
-    font-size: 2rem;
+    font-size: 2.2rem;
     color:#181215;
-    text-shadow: 0 4px 12px rgba(0,0,0,0.1);;
 }
 .btn {
     padding: 1rem 2rem;
@@ -82,7 +81,7 @@ nav h1 {
     color: #fff;
     font-size: 1.2rem;
     border: none;
-    border-radius: 30px;
+    border-radius: 20px;
     cursor: pointer;
     transition: 0.3s;
 }
@@ -109,6 +108,7 @@ section {
     margin-bottom: 1rem;
     color: #ca1f7b;
     font-size: 2rem;
+    text-shadow: 2px 2px 4px rgba(0,0,0,0.5);
 }
 
 .about p {
@@ -232,6 +232,7 @@ section {
     color: #ca1f7b;
     margin-bottom: 1.5rem;
     font-size: 2rem;
+    text-shadow: 2px 2px 4px rgba(0,0,0,0.5);
 }
 
 .contact form {
@@ -299,4 +300,74 @@ footer {
     text-align: center;
     padding: 1rem;
     margin-top: 2rem;
+}
+
+/* ----------- MEDIA QUERIES WITH HAMBURGER ----------- */
+
+.menu-toggle {
+  display: none;
+  flex-direction: column;
+  cursor: pointer;
+  gap: 5px;
+}
+
+.menu-toggle span {
+  width: 25px;
+  height: 3px;
+  background: #ca1f7b;
+  border-radius: 3px;
+  transition: 0.3s;
+}
+
+/* Mobile devices (max-width: 768px) */
+@media (max-width: 768px) {
+  nav {
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+  }
+
+  /* Hide nav links initially */
+  .navlinks {
+    position: absolute;
+    top: 70px;
+    right: 0;
+    background: #fff;
+    flex-direction: column;
+    gap: 1rem;
+    width: 200px;
+    border-radius: 10px;
+    padding: 1rem;
+    display: none;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+  }
+
+  .navlinks.show {
+    display: flex;
+  }
+
+  /* Show hamburger icon */
+  .menu-toggle {
+    display: flex;
+  }
+
+  /* Make hero text smaller */
+  .hero p {
+    font-size: 1.8rem;
+  }
+
+  .btn {
+    font-size: 1rem;
+    padding: 0.7rem 1.3rem;
+  }
+
+  .card-container,
+  .card-container-makeup {
+    grid-template-columns: 1fr;
+    flex-direction: column;
+  }
+
+  .contact form {
+    gap: 0.8rem;
+  }
 }
